@@ -7,14 +7,14 @@
       <option value="or">OR</option>
     </select>
     <button class="btn btn-sm btn-success" (click)="addRule(data)">
-      <i class="glyphicon glyphicon-plus-sign"></i> Add Condition
+      <i class="zmdi zmdi-plus-circle zmdi-hc-fw"></i> Add Condition
     </button>
     <button class="btn btn-sm btn-success" (click)="addRuleSet(data)">
-      <i class="glyphicon glyphicon-plus-sign"></i> Add Group
+      <i class="zmdi zmdi-plus-circle zmdi-hc-fw"></i> Add Group
     </button>
     <ng-container *ngIf="!!parentData">
       <button class="btn btn-sm btn-danger" (click)="removeRuleSet(data, parentData)">
-        <span class="glyphicon glyphicon-minus-sign"></span> Remove Group
+        <span class="zmdi zmdi-minus-circle zmdi-hc-fw"></span> Remove Group
       </button>
     </ng-container>
    </div>
@@ -53,7 +53,7 @@
                 <input class="form-control input-sm builder-field" [(ngModel)]="item.value" *ngSwitchCase="'checkbox'" type="checkbox">
               </ng-container>
               <button class="btn btn-sm btn-danger" (click)="removeRule(item, data)">
-                <span class="glyphicon glyphicon-minus-sign"></span>
+                <span class="zmdi zmdi-minus-circle zmdi-hc-fw"></span>
               </button>
           </ng-container>
           <query-builder *ngIf="local.ruleset" [data]="item" [parentData]="data" [config]="config" [typeMap]="typeMap" [operatorMap]="operatorMap"></query-builder>
