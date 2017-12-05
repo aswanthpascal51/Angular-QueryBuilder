@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/zebzhao/Angular-QueryBuilder#readme",
   "scripts": {
+    "start": "npm start",
     "build": "npm run build:esm && npm run build:umd",
     "build:esm": "gulp inline-templates && npm run ngcompile",
     "build:esm:watch": "gulp build:esm:watch",
@@ -55,7 +56,6 @@
     "test:watch": "karma start --auto-watch --no-single-run",
     "tslint": "tslint"
   },
-  "dependencies": {},
   "peerDependencies": {
     "@angular/common": "^4.0.0",
     "@angular/core": "^4.0.0"
