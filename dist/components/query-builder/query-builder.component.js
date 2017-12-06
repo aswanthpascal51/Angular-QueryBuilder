@@ -132,7 +132,9 @@ var QueryBuilderComponent = /** @class */ (function () {
     QueryBuilderComponent.prototype.validateRule = function (data) {
         if (this.showError) {
             if (!data.hasOwnProperty('value')) {
-                return true;
+                if (data.operator !== 'is null' && data.operator !== 'is not null') {
+                    return true;
+                }
             }
             var fieldProperty = this.config.fields[data.field];
         }

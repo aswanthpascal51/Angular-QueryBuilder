@@ -154,7 +154,9 @@ export class QueryBuilderComponent implements OnInit, OnChanges {
   validateRule(data: Rule) {
     if (this.showError) {
       if (!data.hasOwnProperty('value')) {
-        return true;
+        if (data.operator !== 'is null' && data.operator !== 'is not null') {
+          return true;
+        }
       }
       const fieldProperty = this.config.fields[data.field];
     }
