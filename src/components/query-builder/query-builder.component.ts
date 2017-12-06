@@ -14,6 +14,7 @@ export class QueryBuilderComponent implements OnInit, OnChanges {
   @Input() parentData: RuleSet;
   @Input() data: RuleSet = { condition: 'and', rules: [] };
   @Input() config: QueryBuilderConfig = { fields: {} };
+  @Input() showError: boolean = false;
 
   private defaultEmptyList: any[] = [];
   private operatorsCache: {[key: string]: string[]};
@@ -139,5 +140,24 @@ export class QueryBuilderComponent implements OnInit, OnChanges {
     delete rule.value;
     const fieldObject = this.config.fields[rule.field];
     rule.operator = this.operatorMap[fieldObject.type][0];
+  }
+
+  validateRuleSet(data: RuleSet) {
+    if (this.showError) {
+      if (data.rules.length === 0) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  validateRule(data: Rule) {
+    if (this.showError) {
+      if (!data.hasOwnProperty('value')) {
+        return true;
+      }
+      const fieldProperty = this.config.fields[data.field];
+    }
+    return false;
   }
 }

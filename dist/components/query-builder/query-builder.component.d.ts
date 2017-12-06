@@ -11,6 +11,7 @@ export declare class QueryBuilderComponent implements OnInit, OnChanges {
     parentData: RuleSet;
     data: RuleSet;
     config: QueryBuilderConfig;
+    showError: boolean;
     private defaultEmptyList;
     private operatorsCache;
     constructor();
@@ -24,4 +25,6 @@ export declare class QueryBuilderComponent implements OnInit, OnChanges {
     addRuleSet(parent: RuleSet): void;
     removeRuleSet(ruleset: RuleSet, parent: RuleSet): void;
     onFieldChange(rule: Rule): void;
+    validateRuleSet(data: RuleSet): boolean;
+    validateRule(data: Rule): boolean;
 }
