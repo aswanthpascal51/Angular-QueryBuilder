@@ -56,17 +56,24 @@
         text-align: center;
     }
 
+    .alert-warning {
+      background-color: #fcf8e3;
+      border-color: rgb(220, 200, 150);
+      color: #8a6d3b;
+    }
+
+
     .query-tree {
         list-style: none;
-        margin: 4px 0 2px;
+        margin: 4px 0 2px 20px;
         .builder-field {
             max-width: 150px;
         }
 
         .query-item {
             position: relative;
-            padding: 4px 6px;
-            margin-top: 4px;
+            margin-top: 15px;
+            margin-bottom: 15px;
             &.ruleset {
                 background: rgba(204, 204, 204, 0.2);
         
